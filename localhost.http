@@ -4,7 +4,17 @@ POST http://localhost:3000/auth/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "email":"ex@example.com",
+    "email":"ex5@example.com",
     "password":"password",
     "password_confirmation":"password"
+}
+
+POST http://localhost:3000/auth/sign_in HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "ex4@example.com",
+    "password": "password",
+    "password_confirmation": "password",
+    "message": "hello"
 }

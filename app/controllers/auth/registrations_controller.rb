@@ -1,17 +1,6 @@
-class Auth::RegistrationsController < ApplicationController
-  def create
-    user = User.new(sign_up_params)
-    
-    if user.save
-      render json: user
-    else
-      render json: { errors: user.errors.full_messages }, status: :bad_request
-    end
-  end
-
+class Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
   private
-  
   def sign_up_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:name, :nickname, :email, :img, :password, :password_confirmation)
   end
 end
